@@ -3,6 +3,7 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateSite = require('./src/html-template.js');
 const teamMembers = [];
 
 const promptUser = () => {
@@ -11,8 +12,8 @@ const promptUser = () => {
       type: 'input',
       name: 'name',
       message: 'What is the team manager\'s name?',
-      validate: nameInput => {
-        if (nameInput) {
+      validate: validateName => {
+        if (validateName) {
           return true;
         } else {
           return 'Please enter the team manager\'s name.';
@@ -23,20 +24,20 @@ const promptUser = () => {
       type: 'input',
       name: 'id',
       message: 'What is the team manager\'s id?',
-      // validate: idInput => {
-      //   if (typeof idInput === 'number' && idInput > 0) {
-      //     return true;
-      //   } else {
-      //     return 'Please enter a number greater than 0.';
-      //   }
-      // }
+      validate: validateId => {
+        if (typeof Number(validateId) === 'number' && validateId > 0) {
+          return true;
+        } else {
+          return 'Please enter a number greater than 0.';
+        }
+      }
     },
     {
       type: 'input',
       name: 'email',
       message: 'What is the team manager\'s email?',
-      validate: emailInput => {
-        if (emailInput) {
+      validate: validateEmail => {
+        if (validateEmail) {
           return true;
         } else {
           return 'Please enter the team manager\'s email.';
@@ -47,8 +48,8 @@ const promptUser = () => {
       type: 'input',
       name: 'officeNumber',
       message: 'What is the team manager\'s office number?',
-      validate: officeNumberInput => {
-        if (officeNumberInput) {
+      validate: validateOfficeNumber => {
+        if (validateOfficeNumber) {
           return true;
         } else {
           return 'Please enter the team manager\'s office number.';
@@ -93,8 +94,8 @@ const addEngineer = () => {
       type: 'input',
       name: 'name',
       message: 'What is the engineer\'s name?',
-      validate: nameInput => {
-        if (nameInput) {
+      validate: validateName => {
+        if (validateName) {
           return true;
         } else {
           return 'Please enter the engineer\'s name.';
@@ -105,20 +106,20 @@ const addEngineer = () => {
       type: 'input',
       name: 'id',
       message: 'What is the engineer\'s id?',
-      // validate: idInput => {
-      //   if (typeof idInput === 'number' && idInput > 0) {
-      //     return true;
-      //   } else {
-      //     return 'Please enter a number greater than 0.';
-      //   }
-      // }
+      validate: validateId => {
+        if (typeof Number(validateId) === 'number' && validateId > 0) {
+          return true;
+        } else {
+          return 'Please enter a number greater than 0.';
+        }
+      }
     },
     {
       type: 'input',
       name: 'email',
       message: 'What is the engineer\'s email?',
-      validate: emailInput => {
-        if (emailInput) {
+      validate: validateEmail => {
+        if (validateEmail) {
           return true;
         } else {
           return 'Please enter the engineer\'s email.';
@@ -128,12 +129,12 @@ const addEngineer = () => {
     {
       type: 'input',
       name: 'github',
-      message: 'What is the engineer\'s github username?',
-      validate: githubInput => {
-        if (githubInput) {
+      message: 'What is the engineer\'s GitHub username?',
+      validate: validateGithub => {
+        if (validateGithub) {
           return true;
         } else {
-          return 'Please enter the engineer\'s github username.';
+          return 'Please enter the engineer\'s GitHub username.';
         }
       }
     }
@@ -151,8 +152,8 @@ const addIntern = () => {
       type: 'input',
       name: 'name',
       message: 'What is the intern\'s name?',
-      validate: nameInput => {
-        if (nameInput) {
+      validate: validateName => {
+        if (validateName) {
           return true;
         } else {
           return 'Please enter the intern\'s name.';
@@ -163,20 +164,20 @@ const addIntern = () => {
       type: 'input',
       name: 'id',
       message: 'What is the intern\'s id?',
-      // validate: idInput => {
-      //   if (typeof idInput === 'number' && idInput > 0) {
-      //     return true;
-      //   } else {
-      //     return 'Please enter a number greater than 0.';
-      //   }
-      // }
+      validate: validateId => {
+        if (typeof Number(validateId) === 'number' && validateId > 0) {
+          return true;
+        } else {
+          return 'Please enter a number greater than 0.';
+        }
+      }
     },
     {
       type: 'input',
       name: 'email',
       message: 'What is the intern\'s email?',
-      validate: emailInput => {
-        if (emailInput) {
+      validate: validateEmail => {
+        if (validateEmail) {
           return true;
         } else {
           return 'Please enter the intern\'s email.';
@@ -187,8 +188,8 @@ const addIntern = () => {
       type: 'input',
       name: 'school',
       message: 'What is the intern\'s school?',
-      validate: schoolInput => {
-        if (schoolInput) {
+      validate: validateSchool => {
+        if (validateSchool) {
           return true;
         } else {
           return 'Please enter the intern\'s school.';
@@ -204,7 +205,7 @@ const addIntern = () => {
 };
 
 const assembleTeam = () => {
-
+  fs.writeFileSync('./dist/index.html', generateSite(teamMembers), "utf-8");
 };
 
 promptUser();
