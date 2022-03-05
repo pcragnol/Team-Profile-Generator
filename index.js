@@ -11,19 +11,19 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the team manager\'s name?',
+      message: "What is the team manager's name?",
       validate: validateName => {
         if (validateName) {
           return true;
         } else {
-          return 'Please enter the team manager\'s name.';
+          return "Please enter the team manager's name.";
         }
       }
     },
     {
       type: 'input',
       name: 'id',
-      message: 'What is the team manager\'s id?',
+      message: "What is the team manager's id?",
       validate: validateId => {
         if (typeof Number(validateId) === 'number' && validateId > 0) {
           return true;
@@ -35,24 +35,24 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'email',
-      message: 'What is the team manager\'s email?',
+      message: "What is the team manager's email?",
       validate: validateEmail => {
         if (validateEmail) {
           return true;
         } else {
-          return 'Please enter the team manager\'s email.';
+          return "Please enter the team manager's email.";
         }
       }
     },
     {
       type: 'input',
       name: 'officeNumber',
-      message: 'What is the team manager\'s office number?',
+      message: "What is the team manager's office number?",
       validate: validateOfficeNumber => {
         if (validateOfficeNumber) {
           return true;
         } else {
-          return 'Please enter the team manager\'s office number.';
+          return "Please enter the team manager's office number.";
         }
       }
     }
@@ -93,19 +93,19 @@ const addEngineer = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the engineer\'s name?',
+      message: "What is the engineer's name?",
       validate: validateName => {
         if (validateName) {
           return true;
         } else {
-          return 'Please enter the engineer\'s name.';
+          return "Please enter the engineer's name.";
         }
       }
     },
     {
       type: 'input',
       name: 'id',
-      message: 'What is the engineer\'s id?',
+      message: "What is the engineer's id?",
       validate: validateId => {
         if (typeof Number(validateId) === 'number' && validateId > 0) {
           return true;
@@ -117,24 +117,24 @@ const addEngineer = () => {
     {
       type: 'input',
       name: 'email',
-      message: 'What is the engineer\'s email?',
+      message: "What is the engineer's email?",
       validate: validateEmail => {
         if (validateEmail) {
           return true;
         } else {
-          return 'Please enter the engineer\'s email.';
+          return "Please enter the engineer's email.";
         }
       }
     },
     {
       type: 'input',
       name: 'github',
-      message: 'What is the engineer\'s GitHub username?',
+      message: "What is the engineer's GitHub username?",
       validate: validateGithub => {
         if (validateGithub) {
           return true;
         } else {
-          return 'Please enter the engineer\'s GitHub username.';
+          return "Please enter the engineer's GitHub username.";
         }
       }
     }
@@ -151,19 +151,19 @@ const addIntern = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the intern\'s name?',
+      message: "What is the intern's name?",
       validate: validateName => {
         if (validateName) {
           return true;
         } else {
-          return 'Please enter the intern\'s name.';
+          return "Please enter the intern's name.";
         }
       }
     },
     {
       type: 'input',
       name: 'id',
-      message: 'What is the intern\'s id?',
+      message: "What is the intern's id?",
       validate: validateId => {
         if (typeof Number(validateId) === 'number' && validateId > 0) {
           return true;
@@ -175,24 +175,24 @@ const addIntern = () => {
     {
       type: 'input',
       name: 'email',
-      message: 'What is the intern\'s email?',
+      message: "What is the intern's email?",
       validate: validateEmail => {
         if (validateEmail) {
           return true;
         } else {
-          return 'Please enter the intern\'s email.';
+          return "Please enter the intern's email.";
         }
       }
     },
     {
       type: 'input',
       name: 'school',
-      message: 'What is the intern\'s school?',
+      message: "What is the intern's school?",
       validate: validateSchool => {
         if (validateSchool) {
           return true;
         } else {
-          return 'Please enter the intern\'s school.';
+          return "Please enter the intern's school.";
         }
       }
     }
