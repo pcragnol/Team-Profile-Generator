@@ -2,10 +2,10 @@ const generateTeam = team => {
 
   const generateManager = manager => {
     return `
-    <div class="card">
-  <div class="card-header">
-    <h2 class="card-title">${manager.getName()}</h2>
-    <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i> ${manager.getRole()}</h3>
+    <div class="card mb-5" style="width: 18rem;">
+  <div class="card-header bg-primary">
+    <h2 class="card-title text-white">${manager.getName()}</h2>
+    <h3 class="card-title text-white"><i class="fas fa-mug-hot"></i> ${manager.getRole()}</h3>
   </div>
   <div class="card-body">
     <ul class="list-group">
@@ -20,10 +20,10 @@ const generateTeam = team => {
 
   const generateEngineer = engineer => {
     return `
-    <div class="card">
-  <div class="card-header">
-    <h2 class="card-title">${engineer.getName()}</h2>
-    <h3 class="card-title"><i class="fas fa-glasses mr-2"></i> ${engineer.getRole()}</h3>
+    <div class="card mb-5" style="width: 18rem;">
+  <div class="card-header bg-primary">
+    <h2 class="card-title text-white">${engineer.getName()}</h2>
+    <h3 class="card-title text-white"><i class="fas fa-glasses"></i> ${engineer.getRole()}</h3>
   </div>
   <div class="card-body">
     <ul class="list-group">
@@ -38,10 +38,10 @@ const generateTeam = team => {
 
   const generateIntern = intern => {
     return `
-    <div class="card">
-  <div class="card-header">
-    <h2 class="card-title">${intern.getName()}</h2>
-    <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i> ${intern.getRole()}</h3>
+    <div class="card mb-5" style="width: 18rem;">
+  <div class="card-header bg-primary">
+    <h2 class="card-title text-white">${intern.getName()}</h2>
+    <h3 class="card-title text-white"><i class="fas fa-user-graduate"></i> ${intern.getRole()}</h3>
   </div>
   <div class="card-body">
     <ul class="list-group">
@@ -94,18 +94,14 @@ module.exports = team => {
 </head>
 
 <body>
-  <div class="container-fluid">
+  <header class="mb-5 p-5 bg-success text-white">
+    <h1 class="text-center">My Team</h1>
+  </header>
+  <main class="container">
     <div class="row">
-      <div class="col-12 mb-3">
-        <h1 class="text-center">My Team</h1>
-      </div>
+      <div class="col-12 d-flex flex-wrap justify-content-around">${generateTeam(team)}</div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 d-flex justify-content-center">${generateTeam(team)}</div>
-    </div>
-  </div>
+  </main>
 </body>
 
 </html>
