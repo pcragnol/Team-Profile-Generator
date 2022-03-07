@@ -83,6 +83,7 @@ const addTeamMember = () => {
         break;
       case 'No more team members to add':
         assembleTeam();
+        console.log('Team Assembled!');
         break;
     }
   });
